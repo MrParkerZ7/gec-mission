@@ -1,12 +1,11 @@
-package com.example.mission2.mission2basicrestapi.controller;
+package com.example.mission2.mission2basicrestapi;
 
-import com.example.mission2.mission2basicrestapi.model.Users;
+import com.example.mission2.mission2basicrestapi.Users;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RestController;
 
 import java.util.ArrayList;
-import java.util.Arrays;
 import java.util.List;
 
 @RestController

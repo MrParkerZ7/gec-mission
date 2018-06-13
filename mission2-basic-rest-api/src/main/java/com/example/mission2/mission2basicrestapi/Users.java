@@ -1,4 +1,4 @@
-package com.example.mission2.mission2basicrestapi.model;
+package com.example.mission2.mission2basicrestapi;
 
 import com.sun.corba.se.spi.ior.ObjectId;
 import org.apache.catalina.User;

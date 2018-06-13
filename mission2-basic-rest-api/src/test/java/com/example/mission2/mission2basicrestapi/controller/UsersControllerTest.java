@@ -1,6 +1,6 @@
-package com.example.mission2.mission2basicrestapi.contact;
+package com.example.mission2.mission2basicrestapi.controller;
 
-import com.example.mission2.mission2basicrestapi.controller.UsersController;
+import com.example.mission2.mission2basicrestapi.UsersController;
 import org.junit.Test;
 import org.junit.runner.RunWith;
 import org.springframework.beans.factory.annotation.Autowired;
