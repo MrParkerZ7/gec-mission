@@ -1,7 +1,4 @@
-package com.example.mission2.mission2basicrestapi;
-
-import com.sun.corba.se.spi.ior.ObjectId;
-import org.apache.catalina.User;
+package com.example.mission2.mission2basicrestapi.model;
 
 import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;
@@ -26,7 +23,6 @@ public class Users {
     }
 
     public Users() {
-
     }
 
     public void setId(Integer id) {
@@ -47,6 +43,10 @@ public class Users {
 
     public void setAddress(String address) {
         this.address = address;
+    }
+
+    public Integer getSaraly() {
+        return 59_000;
     }
 
 
