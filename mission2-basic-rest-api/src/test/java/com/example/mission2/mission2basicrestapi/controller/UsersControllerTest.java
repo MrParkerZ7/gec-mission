@@ -46,7 +46,7 @@ public class UsersControllerTest {
     }
 
     @Test
-    public void valid_mock_test_users() throws Exception {
+    public void valid_uri_contact() throws Exception {
 
         // This is mock dummy which use for dummy ApiInfoService to test UsersController
         given(this.apiInfoService.getApiInfo()).willReturn("Promsawat Pitakmetakul Thailand 10400");

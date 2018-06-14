@@ -5,6 +5,7 @@
       <module fileurl="file://$PROJECT_DIR$/gec-mission.iml" filepath="$PROJECT_DIR$/gec-mission.iml" />
       <module fileurl="file://$PROJECT_DIR$/mission1-hello-spring-boot/mission1-hello-spring-boot.iml" filepath="$PROJECT_DIR$/mission1-hello-spring-boot/mission1-hello-spring-boot.iml" />
       <module fileurl="file://$PROJECT_DIR$/mission2-basic-rest-api/mission2-basic-rest-api.iml" filepath="$PROJECT_DIR$/mission2-basic-rest-api/mission2-basic-rest-api.iml" />
+      <module fileurl="file://$PROJECT_DIR$/mission4-database-migration/mission4-database-migration.iml" filepath="$PROJECT_DIR$/mission4-database-migration/mission4-database-migration.iml" />
     </modules>
   </component>
 </project>
