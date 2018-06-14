@@ -1,6 +1,5 @@
 package com.example.mission2.mission2basicrestapi.controller;
 
-import com.example.mission2.mission2basicrestapi.model.Users;
 import com.example.mission2.mission2basicrestapi.service.ApiInfoService;
 import org.junit.Test;
 import org.junit.runner.RunWith;
@@ -26,9 +25,6 @@ public class UsersControllerTest {
     private MockMvc mockMvc;
 
     @MockBean
-    private Users users;
-
-    @MockBean
     private ApiInfoService apiInfoService;
 
 
@@ -51,11 +47,14 @@ public class UsersControllerTest {
 
     @Test
     public void valid_mock_test_users() throws Exception {
+
         // This is mock dummy which use for dummy ApiInfoService to test UsersController
         given(this.apiInfoService.getApiInfo()).willReturn("Promsawat Pitakmetakul Thailand 10400");
+
         this.mockMvc.perform(get("/contact").accept(MediaType.APPLICATION_JSON))
                 .andExpect(status().isOk())
                 .andExpect(content().string("Promsawat Pitakmetakul Thailand 10400"));
+        verify(this.apiInfoService).getApiInfo(); // Use to verify weather we actually call the mock service.
     }
 
 }
