@@ -27,7 +27,6 @@ public class UsersControllerTest {
     @MockBean
     private ApiInfoService apiInfoService;
 
-
     @Test
     public void valid_get_contact_one() throws Exception {
         mockMvc.perform(get("/contactOne")

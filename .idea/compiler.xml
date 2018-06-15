@@ -9,12 +9,14 @@
         <module name="mission1-hello-spring-boot" />
         <module name="mission2-basic-rest-api" />
         <module name="mission4-database-migration" />
+        <module name="mission6-full-api-unittest" />
       </profile>
     </annotationProcessing>
     <bytecodeTargetLevel>
       <module name="mission1-hello-spring-boot" target="1.8" />
       <module name="mission2-basic-rest-api" target="1.8" />
       <module name="mission4-database-migration" target="1.8" />
+      <module name="mission6-full-api-unittest" target="1.8" />
       <module name="tofix-mission4-database-migration" target="1.8" />
     </bytecodeTargetLevel>
   </component>

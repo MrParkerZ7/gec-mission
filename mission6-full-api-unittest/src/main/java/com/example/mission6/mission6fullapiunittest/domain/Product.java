@@ -1,39 +1,39 @@
-package com.example.mission4.database.migration.mission4databasemigration;
+package com.example.mission6.mission6fullapiunittest.domain;
 
 import javax.persistence.*;
 import javax.validation.constraints.NotBlank;
-import javax.validation.constraints.Size;
 
 @Entity
 @Table(name = "tbl_product")
 public class Product {
 
     @Id
+    @Column(name = "  product_id")
     @GeneratedValue(strategy = GenerationType.IDENTITY)
-    @Column(name = "product_id")
-    private Long id;
+    private Integer id;
 
     @NotBlank
     @Column(name = "product_name")
-    @Size(min = 1, max = 100)
     private String productName;
 
-    @Column(name = "price")
     private int price;
 
-    @Column(name = "quantity")
     private int quantity;
+
+    private int reservations;
 
     public Product() {
     }
 
-    public Product(String productName, int price, int quantity) {
+    public Product(Integer id, @NotBlank String productName, int price, int quantity, int reservations) {
+        this.id = id;
         this.productName = productName;
         this.price = price;
         this.quantity = quantity;
+        this.reservations = reservations;
     }
 
-    public Long getId() {
+    public Integer getId() {
         return id;
     }
 
@@ -61,13 +61,11 @@ public class Product {
         this.quantity = quantity;
     }
 
-    @Override
-    public String toString() {
-        return "Product{" +
-                "id=" + id +
-                ", productName='" + productName + '\'' +
-                ", price=" + price +
-                ", quantity=" + quantity +
-                '}';
+    public int getReservations() {
+        return reservations;
+    }
+
+    public void setReservations(int reservations) {
+        this.reservations = reservations;
     }
 }
