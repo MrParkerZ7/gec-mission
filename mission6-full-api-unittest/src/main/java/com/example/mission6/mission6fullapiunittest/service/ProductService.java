@@ -17,15 +17,23 @@ public class ProductService {
         return product.getQuantity() > product.getReservations() ? true : false;
     }
 
-    public String reservation(Optional<Product> product) {
+    public String transaction(Optional<Product> product, Status status) {
+
         if (product.isPresent()) {
-            Product productAvailable = product.get();
-            if (checkAvailable(productAvailable)) {
-                productAvailable.setReservations(productAvailable.getReservations() + 1);
-                productRepository.save(productAvailable);
-                return "Thank you!! You has reservation our product.";
+            Product available = product.get();
+
+            if (checkAvailable(available)) {
+
+                if (status == Status.RESERVATION)
+                    available.setReservations(available.getReservations() + 1);
+                else if (status == Status.BUY)
+                    available.setQuantity(available.getQuantity() - 1);
+
+                productRepository.save(available);
+
+                return "Thank you!! Your transaction complete!!";
             } else
-                return "Sorry!! We have no product left for reservation.";
+                return "Sorry!! We have no product left for you.";
         } else
             return "Your order not found!!";
     }

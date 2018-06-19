@@ -20,6 +20,5 @@ public class DataLoader implements CommandLineRunner {
 //        productRepository.save(new Product(4, "Mouse Logitech G403", 3_900, 0, 0));
 //        productRepository.save(new Product(5, "Head Phone", 390, 14, 4));
 //        productRepository.save(new Product(6, "Macbook Pro", 7_900, 4, 4));
-
     }
 }

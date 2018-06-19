@@ -3,6 +3,7 @@ package com.example.mission6.mission6fullapiunittest.controller;
 import com.example.mission6.mission6fullapiunittest.domain.Product;
 import com.example.mission6.mission6fullapiunittest.domain.ProductRepository;
 import com.example.mission6.mission6fullapiunittest.service.ProductService;
+import com.example.mission6.mission6fullapiunittest.service.Status;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.*;
 
@@ -19,12 +20,6 @@ public class ProductController {
     @Autowired
     private ProductService productService;
 
-
-    @GetMapping
-    public Product test() {
-        return new Product(3, "Monitor", 2_500, 7, 2);
-    }
-
     @GetMapping("/all")
     public List<Product> getAll() {
         return productRepository.findAll();
@@ -37,14 +32,12 @@ public class ProductController {
 
     @GetMapping("/reservation/{id}")
     public String reservationProduct(@PathVariable("id") int id) {
-        return productService.reservation(productRepository.findById(id));
+        return productService.transaction(productRepository.findById(id), Status.RESERVATION);
     }
 
     @GetMapping("/buy/{id}")
     public String buyProduct(@PathVariable("id") int id) {
-        productRepository.findById(id);
-        return "";
+        return productService.transaction(productRepository.findById(id), Status.BUY);
     }
-
 
 }
