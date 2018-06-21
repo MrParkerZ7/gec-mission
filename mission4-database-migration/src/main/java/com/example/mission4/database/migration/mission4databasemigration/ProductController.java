@@ -17,7 +17,7 @@ public class ProductController {
 
     @GetMapping("/save/{name}/{price}/{quantity}")
     public List<Product> saveOne(@PathVariable("name") String name, @PathVariable("price") int price, @PathVariable("quantity") int quantity) {
-        productRepository.save(new Product(name, price, quantity));
+        productRepository.save(new Product(name, price, quantity, 0));
         return productRepository.findAll();
     }
 

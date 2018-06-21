@@ -32,12 +32,12 @@ public class ProductControllerTest {
     public void valid_get_all() throws Exception {
         when(productRepository.findAll()).thenReturn(
                 new ArrayList<>(Arrays.asList(
-                        new Product("Ipad", 1000, 7),
-                        new Product("Pen", 17, 23),
-                        new Product("Head Phone", 490, 12),
-                        new Product("Monitor LED", 2700, 3),
-                        new Product("Lan Cable", 150, 34),
-                        new Product("Mouse Logitech", 3900, 2)
+                        new Product("Ipad", 1000, 7,0),
+                        new Product("Pen", 17, 23,0),
+                        new Product("Head Phone", 490, 12,0),
+                        new Product("Monitor LED", 2700, 3,0),
+                        new Product("Lan Cable", 150, 34,0),
+                        new Product("Mouse Logitech", 3900, 2,0)
                 ))
         );
 

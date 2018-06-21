@@ -13,6 +13,7 @@
       </profile>
     </annotationProcessing>
     <bytecodeTargetLevel>
+      <module name="mission-excuse1-flyway-migration" target="1.8" />
       <module name="mission1-hello-spring-boot" target="1.8" />
       <module name="mission2-basic-rest-api" target="1.8" />
       <module name="mission4-database-migration" target="1.8" />

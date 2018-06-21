@@ -12,11 +12,11 @@ public class DataLoader implements CommandLineRunner {
 
     @Override
     public void run(String... args) throws Exception {
-        productRepository.save(new Product("Ipad",1000,7));
-        productRepository.save(new Product("Pen",17,23));
-        productRepository.save(new Product("Head Phone",490,12));
-        productRepository.save(new Product("Monitor LED",2700,3));
-        productRepository.save(new Product("Lan Cable",150,34));
-        productRepository.save(new Product("Mouse Logitech",3900,2));
+        productRepository.save(new Product("Ipad", 1000, 7, 0));
+        productRepository.save(new Product("Pen", 17, 23, 1));
+        productRepository.save(new Product("Head Phone", 490, 12, 3));
+        productRepository.save(new Product("Monitor LED", 2700, 3, 2));
+        productRepository.save(new Product("Lan Cable", 150, 34, 2));
+        productRepository.save(new Product("Mouse Logitech", 3900, 2, 0));
     }
 }

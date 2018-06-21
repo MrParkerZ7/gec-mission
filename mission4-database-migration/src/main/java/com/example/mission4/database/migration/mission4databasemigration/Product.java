@@ -24,13 +24,17 @@ public class Product {
     @Column(name = "quantity")
     private int quantity;
 
+    @Column(name = "reservations")
+    private int reservations;
+
     public Product() {
     }
 
-    public Product(String productName, int price, int quantity) {
+    public Product(@NotBlank @Size(min = 1, max = 100) String productName, int price, int quantity, int reservations) {
         this.productName = productName;
         this.price = price;
         this.quantity = quantity;
+        this.reservations = reservations;
     }
 
     public Long getId() {
@@ -61,13 +65,15 @@ public class Product {
         this.quantity = quantity;
     }
 
-    @Override
-    public String toString() {
-        return "Product{" +
-                "id=" + id +
-                ", productName='" + productName + '\'' +
-                ", price=" + price +
-                ", quantity=" + quantity +
-                '}';
+    public void setId(Long id) {
+        this.id = id;
+    }
+
+    public int getReservations() {
+        return reservations;
+    }
+
+    public void setReservations(int reservations) {
+        this.reservations = reservations;
     }
 }
