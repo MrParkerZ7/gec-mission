@@ -22,8 +22,8 @@ public class ProductsController {
     }
 
     @PostMapping
-    private ResponseEntity<String> saveOne(@RequestBody Product product) {
+    private ResponseEntity<String> insertOne(@RequestBody Product product) {
         productRepository.save(product);
-        return new ResponseEntity<String>("Insert Finished", HttpStatus.OK);
+        return new ResponseEntity<String>("Save Successfully", HttpStatus.OK);
     }
 }

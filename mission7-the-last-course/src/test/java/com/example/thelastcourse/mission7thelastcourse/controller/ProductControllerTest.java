@@ -55,6 +55,8 @@ public class ProductControllerTest {
         mvc.perform(post("/product").contentType(MediaType.APPLICATION_JSON).content(product))
                 .andDo(print())
                 .andExpect(status().isOk())
-                .andExpect(jsonPath("$", is("Insert Finished")));
+                .andExpect(jsonPath("$", is("Save Successfully")));
     }
+
+
 }

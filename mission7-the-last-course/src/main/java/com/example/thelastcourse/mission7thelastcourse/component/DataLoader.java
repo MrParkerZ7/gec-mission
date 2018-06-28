@@ -14,8 +14,8 @@ public class DataLoader implements CommandLineRunner {
 
     @Override
     public void run(String... args) throws Exception {
-        productRepository.save(new Product("Pen",5,170));
-        productRepository.save(new Product("Table",450,7));
-        productRepository.save(new Product("Backpack",1990,3));
+//        productRepository.save(new Product("Pen",5,170));
+//        productRepository.save(new Product("Table",450,7));
+//        productRepository.save(new Product("Backpack",1990,3));
     }
 }
