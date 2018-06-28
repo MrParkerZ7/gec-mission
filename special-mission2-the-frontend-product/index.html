@@ -35,7 +35,7 @@
         <tbody>
             <tr ng-repeat="product in ctl.products | orderBy: ctl.sortBy | filter:ctl.search">
                 <td class="turn-text-left">{{product.name}}</td>
-                <td class="turn-text-right">{{product.price | currency:"฿":2 }}</td>
+                <td class="turn-text-right">{{product.price | currency:"$":2 }}</td>
                 <td class="turn-text-right">{{product.quantity | number:0 }}</td>
             </tr>
         </tbody>

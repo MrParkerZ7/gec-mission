@@ -1,0 +1,19 @@
+.center {
+    text-align: center;
+    margin: auto;
+}
+.turn-text-left {
+    text-align: left;
+}
+.turn-text-right {
+    text-align: right;
+}
+.space5 {
+    padding: 5%;
+}
+.margin-2px {
+    margin: 2px;
+}
+.padding-space {
+    padding:  5px;
+}
