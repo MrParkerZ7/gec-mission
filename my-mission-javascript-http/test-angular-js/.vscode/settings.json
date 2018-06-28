@@ -1,0 +1,12 @@
+{
+    "favorites.sortDirection": "ASC",
+    "favorites.groupsFirst": true,
+    "favorites.root": [
+        {
+            "type": "File",
+            "name": "/Users/parker/Programming/IdeaProjects/test-angular-js/.vscode/settings.json",
+            "parent_id": null,
+            "id": "v4XIqzN26pVGwU7t"
+        }
+    ]
+}

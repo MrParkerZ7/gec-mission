@@ -1,0 +1,67 @@
+<!doctype html>
+<html ng-app="myApp">
+
+<head>
+    <title>Test AngularJS</title>
+    <link href="app.css" rel="stylesheet" />
+</head>
+
+<body>
+    <div ng-controller="myController">
+        <input type="text" placeholder="Search All" ng-model="search" />
+        <input type="text" placeholder="Search Name" ng-model="search.name" />
+        <input type="text" placeholder="Search Grade" ng-model="search.grade" />
+        <input type="checkbox" ng-model="match" > Match </input>
+        <br/> Shows limit :
+        <input type="number" min="0" max="{{users.length}}" ng-model="limit" /> Start from :
+        <input type="number" min="0" max="{{users.length-1}}" ng-model="start" /> Sort by :
+        <select ng-model="sortBy">
+            <option value="name">Name</option>
+            <option value="gender">Gender</option>
+            <option value="grade">Grade</option>
+            <option value="born">Born</option>
+            <option value="saraly">Saraly</option>
+            <option value="score">Score</option>
+        </select>
+
+        <table>
+            <thead>
+                <tr>
+                    <th ng-click="sortData('name')">Name
+                        <div ng-class="sortGetClass('name')"></div>
+                    </th>
+                    <th ng-click="sortData('gender')">Gender
+                        <div ng-class="sortGetClass('gender')"></div>
+                    </th>
+                    <th ng-click="sortData('grade')">Grade
+                        <div ng-class="sortGetClass('grade')"></div>
+                    </th>
+                    <th ng-click="sortData('born')">Born
+                        <div ng-class="sortGetClass('born')"></div>
+                    </th>
+                    <th ng-click="sortData('saraly')">Saraly
+                        <div ng-class="sortGetClass('saraly')"></div>
+                    </th>
+                    <th ng-click="sortData('score')">Score
+                        <div ng-class="sortGetClass('score')"></div>
+                    </th>
+                </tr>
+            </thead>
+            <tbody>
+                <tr ng-repeat="user in users | limitTo:limit:start | orderBy: sortBy : sortReverse | filter:search:match">
+                    <td>{{ user.name }}</td>
+                    <td>{{ user.gender | lowercase }}</td>
+                    <td>{{ user.grade | uppercase }}</td>
+                    <td>{{ user.duration | date:"dd/MM/yyyy" }}</td>
+                    <td>{{ user.saraly | currency:"$":2 }}</td>
+                    <td>{{ user.score | number:3 }}</td>
+                </tr>
+            </tbody>
+        </table>
+    </div>
+
+    <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.7.2/angular.min.js"></script>
+    <script src="app.js"></script>
+</body>
+
+</html>
