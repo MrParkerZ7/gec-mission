@@ -12,15 +12,29 @@ import static org.springframework.test.web.servlet.request.MockMvcRequestBuilder
 import static org.springframework.test.web.servlet.result.MockMvcResultMatchers.status;
 
 @RunWith(SpringRunner.class)
-@WebMvcTest(HomeController.class)
-public class HomeControllerTest {
+@WebMvcTest(UiController.class)
+public class UiControllerTest {
 
     @Autowired
     private MockMvc mvc;
 
     @Test
-    public void open_home() throws Exception {
+    public void request_home_page() throws Exception {
         mvc.perform(get("/")
+                .contentType(MediaType.TEXT_HTML))
+                .andExpect(status().isOk());
+    }
+
+    @Test
+    public void request_list_product_component() throws Exception {
+        mvc.perform(get("/list-product")
+                .contentType(MediaType.TEXT_HTML))
+                .andExpect(status().isOk());
+    }
+
+    @Test
+    public void request_add_product_component() throws Exception {
+        mvc.perform(get("/add-product")
                 .contentType(MediaType.TEXT_HTML))
                 .andExpect(status().isOk());
     }

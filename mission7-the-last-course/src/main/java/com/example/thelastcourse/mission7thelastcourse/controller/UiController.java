@@ -9,7 +9,7 @@ import java.util.List;
 
 @Controller
 @RequestMapping("/")
-public class HomeController {
+public class UiController {
 
     private List pack = new ArrayList();
 

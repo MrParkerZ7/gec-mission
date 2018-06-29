@@ -1,51 +1,41 @@
 <!DOCTYPE HTML>
-<html ng-app="myApp" xmlns:th="http://www.thymeleaf.org" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
-      xsi:schemaLocation="http://www.thymeleaf.org http://www.thymeleaf.org ">
+<html ng-app="myApp" xmlns:th="http://www.thymeleaf.org">
 
 <head>
     <title>Search Product</title>
-    <link href="app.css" rel="stylesheet"/>
-    <meta http-equiv="Content-Type" content="text/html; charset=UTF-8"/>
-    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.1.1/css/bootstrap.min.css"
-          integrity="sha384-WskhaSGFgHYWDcbwN70/dfYBj47jz9qbsMId/iRN3ewGhXQFZCSftd1LZCfmhktB"
-          crossorigin="anonymous">
+    <link href="style.css" rel="stylesheet" />
+    <meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.1.1/css/bootstrap.min.css" integrity="sha384-WskhaSGFgHYWDcbwN70/dfYBj47jz9qbsMId/iRN3ewGhXQFZCSftd1LZCfmhktB"
+        crossorigin="anonymous">
 </head>
 
-<body class="center col" style="padding: 20px" ng-controller="myController as ctl">
-<h2>Available Order List</h2>
-<div class="center alert alert-dark">
-    <div class="row justify-content-md-center">
-        <div class="col-2 padding-space">
-            <h3>Product :</h3>
+<body class="col center no-margin">
+
+    <div class="col row no-margin">
+        <div class="col-2 column" style="padding: 10px">
+            <h4>Menu</h4>
+            <h6>
+                <a href="#/list">List Product</a>
+            </h6>
+            <h6>
+                <a href="#/add">Add Product</a>
+            </h6>
         </div>
-        <div class="ol-md-12 col-lg-8 center">
-            <input class="col" type="text" ng-model="ctl.search"/>
-        </div>
-        <div class="col-2 padding-space">
-            <button type="button" class="btn btn-primary">Search Product</button>
+        <div class="col-10" style="padding: 10px">
+            <ng-view></ng-view>
+            <!-- <div ng-app="addApp" ng-controller="AddController as ctl" ng-include="'/add-product'"></div>
+            <div ng-app="listApp" ng-controller="ListController as ctl" ng-include="'/list-product'"></div> -->
         </div>
     </div>
-</div>
 
-<table class="table">
-    <thead class="alert alert-dark">
-    <tr>
-        <th class="turn-text-left" scope="col">Product</th>
-        <th class="turn-text-right" scope="col">Price</th>
-        <th class="turn-text-right" scope="col">Quantity</th>
-    </tr>
-    </thead>
-    <tbody>
-    <tr ng-repeat="product in ctl.products | orderBy: ctl.sortBy | filter:ctl.search">
-        <td class="turn-text-left">{{product.name}}</td>
-        <td class="turn-text-right">{{product.price | currency:"$":2 }}</td>
-        <td class="turn-text-right">{{product.quantity | number:0 }}</td>
-    </tr>
-    </tbody>
-</table>
+    <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js" integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo"
+        crossorigin="anonymous"></script>
+    <script src="https://code.angularjs.org/1.7.2/angular.js"></script>
+    <script src="https://code.angularjs.org/1.7.2/angular-route.js"></script>
 
-<script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.7.2/angular.min.js"></script>
-<script src="app.js"></script>
+    <!-- <script src="list-product.js"></script> -->
+    <!-- <script src="add-product.js"></script> -->
+    <script src="app.js"></script>
 </body>
 
 </html>
