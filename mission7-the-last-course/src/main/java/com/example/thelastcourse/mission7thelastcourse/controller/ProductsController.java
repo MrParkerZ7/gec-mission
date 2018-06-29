@@ -23,7 +23,17 @@ public class ProductsController {
 
     @PostMapping
     private ResponseEntity<String> insertOne(@RequestBody Product product) {
-        productRepository.save(product);
-        return new ResponseEntity<String>("Save Successfully", HttpStatus.OK);
+        if (product.getId() == null || !productRepository.existsById(product.getId())) {
+            productRepository.save(product);
+            return new ResponseEntity<String>("Save Successfully", HttpStatus.OK);
+        } else return new ResponseEntity<>("ID Duplicated", HttpStatus.NOT_ACCEPTABLE);
+    }
+
+    @PutMapping
+    private ResponseEntity<String> updateOne(@RequestBody Product product) {
+        if (product.getId() != null && productRepository.existsById(product.getId())) {
+            productRepository.save(product);
+            return new ResponseEntity<String>("Update Successfully", HttpStatus.OK);
+        } else return new ResponseEntity<>("Product Not Found", HttpStatus.NOT_FOUND);
     }
 }

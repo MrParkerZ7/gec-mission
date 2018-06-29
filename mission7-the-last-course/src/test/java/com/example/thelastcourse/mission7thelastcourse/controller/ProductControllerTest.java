@@ -49,8 +49,9 @@ public class ProductControllerTest {
     }
 
     @Test
-    public void post_product() throws Exception {
+    public void post_product_successful() throws Exception {
         String product = "{\"id\":1,\"name\":\"Pen\",\"price\":5,\"quantity\":170}";
+        given(productRepository.existsById(1)).willReturn(false);
 
         mvc.perform(post("/product").contentType(MediaType.APPLICATION_JSON).content(product))
                 .andDo(print())
@@ -58,5 +59,37 @@ public class ProductControllerTest {
                 .andExpect(jsonPath("$", is("Save Successfully")));
     }
 
+    @Test
+    public void post_product_failure() throws Exception {
+        String product = "{\"id\":1,\"name\":\"Pen\",\"price\":5,\"quantity\":170}";
+        given(productRepository.existsById(1)).willReturn(true);
+
+        mvc.perform(post("/product").contentType(MediaType.APPLICATION_JSON).content(product))
+                .andDo(print())
+                .andExpect(status().isNotAcceptable())
+                .andExpect(jsonPath("$",is("ID Duplicated")));
+    }
+
+    @Test
+    public void put_product_successful() throws Exception {
+        String product = "{\"id\":1,\"name\":\"Pen\",\"price\":5,\"quantity\":170}";
+        given(productRepository.existsById(1)).willReturn(true);
+
+        mvc.perform(put("/product").contentType(MediaType.APPLICATION_JSON).content(product))
+                .andDo(print())
+                .andExpect(status().isOk())
+                .andExpect(jsonPath("$",is("Update Successfully")));
+    }
+
+    @Test
+    public void put_product_failure() throws Exception {
+        String product = "{\"id\":1,\"name\":\"Pen\",\"price\":5,\"quantity\":170}";
+        given(productRepository.existsById(1)).willReturn(false);
+
+        mvc.perform(put("/product").contentType(MediaType.APPLICATION_JSON).content(product))
+                .andDo(print())
+                .andExpect(status().isNotFound())
+                .andExpect(jsonPath("$",is("Product Not Found")));
+    }
 
 }

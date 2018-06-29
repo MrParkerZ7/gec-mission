@@ -8,4 +8,3 @@ INSERT INTO tbl_products(id, name, price, quantity) VALUES(7,"Table",450,7);
 INSERT INTO tbl_products(id, name, price, quantity) VALUES(8,"Ram DDR4 4GB",990,3);
 INSERT INTO tbl_products(id, name, price, quantity) VALUES(9,"Keybord",1590,3);
 INSERT INTO tbl_products(id, name, price, quantity) VALUES(10,"Backpack",1990,3);
-
