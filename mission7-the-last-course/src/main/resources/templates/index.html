@@ -1,5 +1,5 @@
 <!DOCTYPE HTML>
-<html ng-app="myApp" xmlns:th="http://www.thymeleaf.org">
+<html ng-app="myApp">
 
 <head>
     <title>Search Product</title>
@@ -9,22 +9,16 @@
         crossorigin="anonymous">
 </head>
 
-<body class="col center no-margin">
+<body class="col center" style="margin: 0px; padding: 0px">
 
-    <div class="col row no-margin">
-        <div class="col-2 column" style="padding: 10px">
-            <h4>Menu</h4>
-            <h6>
-                <a href="#/list">List Product</a>
-            </h6>
-            <h6>
-                <a href="#/add">Add Product</a>
-            </h6>
-        </div>
-        <div class="col-10" style="padding: 10px">
-            <ng-view></ng-view>
-            <!-- <div ng-app="addApp" ng-controller="AddController as ctl" ng-include="'/add-product'"></div>
-            <div ng-app="listApp" ng-controller="ListController as ctl" ng-include="'/list-product'"></div> -->
+    <div class="col" style="margin: 0px; padding: 0px">
+        <nav class="nav" style="margin: 0px; padding: 20px">
+            <a class="nav-link disabled">Menu</a>
+            <a class="nav-link" href="#!/list">List Product</a>
+            <a class="nav-link" href="#!/add">Add Product</a>
+        </nav>
+        <div class="col" style="padding: 20px">
+            <div ng-view></div>
         </div>
     </div>
 
@@ -33,8 +27,6 @@
     <script src="https://code.angularjs.org/1.7.2/angular.js"></script>
     <script src="https://code.angularjs.org/1.7.2/angular-route.js"></script>
 
-    <!-- <script src="list-product.js"></script> -->
-    <!-- <script src="add-product.js"></script> -->
     <script src="app.js"></script>
 </body>
 

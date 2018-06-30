@@ -3,6 +3,12 @@
     margin: auto;
 }
 
+.text-inline {
+    white-space: nowrap;
+    overflow: hidden;
+    text-overflow: ellipsis;
+}
+
 .no-margin {
     margin: 0px;
 }

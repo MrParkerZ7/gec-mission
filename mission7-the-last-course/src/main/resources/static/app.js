@@ -1,12 +1,14 @@
 var app = angular.module('myApp', ['ngRoute']);
 
 app.config(function ($routeProvider) {
-    $routeProvider.when("/list", {
-        templateUrl: "list-product/list-product.html",
-        controller: "ListController"
-    }).when("/add", {
-        templateUrl: "add-product/add-product.html",
-        controller: "AddController"
+    $routeProvider.when('/list', {
+        templateUrl: '/list-product',
+        controller: 'ListController as ctl'
+    }).when('/add', {
+        templateUrl: '/add-product',
+        controller: 'AddController as ctl'
+    }).otherwise({
+        redirectTo: '/list'
     });
 });
 
@@ -25,8 +27,8 @@ app.controller('ListController', ['$q', '$http', 'ListService', function ($q, $h
     this.getProduct = function () {
         var deferred = $q.defer();
         $http({
-            method: "GET",
-            url: "/product"
+            method: 'GET',
+            url: '/product'
         }).then(function resolve(response) {
             return deferred.resolve(response);
         }, function reject(response) {
@@ -45,14 +47,14 @@ app.controller('AddController', ['AddService', function (AddService) {
             console.log('Data Added : ' + name + ' ' + price + ' ' + quantity);
             AddService.saveProduct(name, price, quantity);
         } else
-            throw "Product Undefined Found!!";
+            throw 'Product Undefined Found!!';
     };
 }]).service('AddService', ['$http', '$q', function ($http, $q) {
     this.saveProduct = function (name, price, quantity) {
         var deferred = $q.defer();
         $http({
-            method: "POST",
-            url: "/product",
+            method: 'POST',
+            url: '/product',
             data: {
                 name: name,
                 price: price,
