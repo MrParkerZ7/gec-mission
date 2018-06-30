@@ -1,7 +1,6 @@
 package com.example.thelastcourse.mission7thelastcourse.service;
 
 import com.example.thelastcourse.mission7thelastcourse.entity.Product;
-import org.springframework.stereotype.Service;
 
 import java.util.List;
 

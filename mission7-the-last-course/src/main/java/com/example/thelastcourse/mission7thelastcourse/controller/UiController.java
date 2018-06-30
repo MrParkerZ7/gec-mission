@@ -27,4 +27,9 @@ public class UiController {
     public String newProduct() {
         return "/list-product/list-product";
     }
+
+    @GetMapping("/details-product")
+    public String detailsProduct() {
+        return "/details-product/details-product";
+    }
 }

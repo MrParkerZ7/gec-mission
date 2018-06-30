@@ -1,0 +1,24 @@
+<h3>Details Product : {{ ctl.product.name }}</h3>
+
+<table class="table">
+    <thead class="alert alert-dark">
+        <tr>
+            <th class="turn-text-left" scope="col">ID</th>
+            <th class="turn-text-left" scope="col">Product</th>
+            <th class="turn-text-right" scope="col">Price</th>
+            <th class="turn-text-right" scope="col">Quantity</th>
+        </tr>
+    </thead>
+    <tbody>
+        <tr>
+            <td class="turn-text-left">{{ ctl.product.id }}</td>
+            <td class="turn-text-left">{{ ctl.product.name }}</td>
+            <td class="turn-text-right">{{ ctl.product.price | currency:"$":2 }}</td>
+            <td class="turn-text-right">{{ ctl.product.quantity | number:0 }}</td>
+        </tr>
+    </tbody>
+</table>
+
+<h4>
+    <a href="/list">Back to List</a>
+</h4>
