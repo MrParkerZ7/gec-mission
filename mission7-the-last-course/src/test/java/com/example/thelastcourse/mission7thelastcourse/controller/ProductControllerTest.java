@@ -2,6 +2,7 @@ package com.example.thelastcourse.mission7thelastcourse.controller;
 
 import com.example.thelastcourse.mission7thelastcourse.entity.Product;
 import com.example.thelastcourse.mission7thelastcourse.entity.ProductRepository;
+import org.hamcrest.Matcher;
 import org.junit.Test;
 import org.junit.runner.RunWith;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -29,6 +30,29 @@ public class ProductControllerTest {
 
     @MockBean
     private ProductRepository productRepository;
+
+    @Test
+    public void get_product() throws Exception {
+        given(productRepository.findById(3)).willReturn(
+                java.util.Optional.of(new Product(3, "Cola", 12, 50)));
+
+        mvc.perform(get("/product/3").contentType(MediaType.APPLICATION_JSON))
+                .andExpect(status().isOk())
+                .andExpect(jsonPath("$.id", is(3)))
+                .andExpect(jsonPath("$.name", is("Cola")))
+                .andExpect(jsonPath("$.price", is(12)))
+                .andExpect(jsonPath("$.quantity", is(50)));
+    }
+
+    @Test
+    public void get_product_but_not_found() throws Exception {
+        given(productRepository.findById(3)).willReturn(
+                java.util.Optional.empty());
+
+        mvc.perform(get("/product/3").contentType(MediaType.APPLICATION_JSON))
+                .andExpect(status().isNotFound());
+    }
+
 
     @Test
     public void get_product_all() throws Exception {
@@ -67,7 +91,7 @@ public class ProductControllerTest {
         mvc.perform(post("/product").contentType(MediaType.APPLICATION_JSON).content(product))
                 .andDo(print())
                 .andExpect(status().isNotAcceptable())
-                .andExpect(jsonPath("$",is("ID Duplicated")));
+                .andExpect(jsonPath("$", is("ID Duplicated")));
     }
 
     @Test
@@ -78,7 +102,7 @@ public class ProductControllerTest {
         mvc.perform(put("/product").contentType(MediaType.APPLICATION_JSON).content(product))
                 .andDo(print())
                 .andExpect(status().isOk())
-                .andExpect(jsonPath("$",is("Update Successfully")));
+                .andExpect(jsonPath("$", is("Update Successfully")));
     }
 
     @Test
@@ -89,7 +113,7 @@ public class ProductControllerTest {
         mvc.perform(put("/product").contentType(MediaType.APPLICATION_JSON).content(product))
                 .andDo(print())
                 .andExpect(status().isNotFound())
-                .andExpect(jsonPath("$",is("Product Not Found")));
+                .andExpect(jsonPath("$", is("Product Not Found")));
     }
 
 }
