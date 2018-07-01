@@ -5,7 +5,7 @@
             <h3 class="text-inline">Product :</h3>
         </div>
         <div class="ol-md-12 col-lg-8 center">
-            <input class="col" type="text" ng-model="ctl.search" />
+            <input id="search" class="col" type="text" ng-model="ctl.search" />
         </div>
         <div class="col-12 col-lg-2 padding-space">
             <button type="button" ng-click="ctl.onGetData()" class="btn btn-primary">Refresh!</button>
@@ -24,7 +24,7 @@
     <tbody>
         <tr ng-model="ctl.products" ng-repeat="product in ctl.products | orderBy: ctl.sortBy | filter:ctl.search">
             <td class="turn-text-left">
-                <a href="/details/{{product.id}}">{{product.name}}</a>
+                <a id="{{product.id}}" href="/details/{{product.id}}">{{product.name}}</a>
             </td>
             <td class="turn-text-right">{{product.price | currency:"$":2 }}</td>
             <td class="turn-text-right">{{product.quantity | number:0 }}</td>

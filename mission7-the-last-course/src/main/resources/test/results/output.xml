@@ -1,0 +1,313 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<robot generator="Robot 3.0.4 (Python 3.6.5 on darwin)" generated="20180701 22:17:44.021">
+<suite id="s1" name="Product Test" source="/Users/parker/Programming/IdeaProjects/gec-mission/mission7-the-last-course/src/main/resources/test/product_test.robot">
+<test id="s1-t1" name="Check Menu Bar">
+<kw name="Start Up">
+<kw name="Open Browser" library="Selenium2Library">
+<doc>Opens a new browser instance to the given ``url``.</doc>
+<arguments>
+<arg>http://localhost:8080</arg>
+<arg>chrome</arg>
+</arguments>
+<msg timestamp="20180701 22:17:44.408" level="INFO">Opening browser 'chrome' to base url 'http://localhost:8080'.</msg>
+<status status="PASS" starttime="20180701 22:17:44.408" endtime="20180701 22:17:49.480"></status>
+</kw>
+<kw name="Title Should Be" library="Selenium2Library">
+<doc>Verifies that current page title equals ``title``.</doc>
+<arguments>
+<arg>Product Zone</arg>
+</arguments>
+<msg timestamp="20180701 22:17:49.572" level="INFO">Page title is 'Product Zone'.</msg>
+<status status="PASS" starttime="20180701 22:17:49.480" endtime="20180701 22:17:49.572"></status>
+</kw>
+<status status="PASS" starttime="20180701 22:17:44.408" endtime="20180701 22:17:49.572"></status>
+</kw>
+<kw name="Click and Check">
+<arguments>
+<arg>${id-add-menu}</arg>
+<arg>${add-page}</arg>
+</arguments>
+<kw name="Click Element" library="Selenium2Library">
+<doc>Click element identified by ``locator``.</doc>
+<arguments>
+<arg>${id}</arg>
+</arguments>
+<msg timestamp="20180701 22:17:49.574" level="INFO">Clicking element 'add'.</msg>
+<status status="PASS" starttime="20180701 22:17:49.573" endtime="20180701 22:17:49.651"></status>
+</kw>
+<kw name="Wait Until Page Contains" library="Selenium2Library">
+<doc>Waits until ``text`` appears on current page.</doc>
+<arguments>
+<arg>${contains}</arg>
+</arguments>
+<status status="PASS" starttime="20180701 22:17:49.652" endtime="20180701 22:17:49.664"></status>
+</kw>
+<status status="PASS" starttime="20180701 22:17:49.573" endtime="20180701 22:17:49.664"></status>
+</kw>
+<kw name="Click and Check">
+<arguments>
+<arg>${id-list-menu}</arg>
+<arg>${list-page}</arg>
+</arguments>
+<kw name="Click Element" library="Selenium2Library">
+<doc>Click element identified by ``locator``.</doc>
+<arguments>
+<arg>${id}</arg>
+</arguments>
+<msg timestamp="20180701 22:17:49.665" level="INFO">Clicking element 'list'.</msg>
+<status status="PASS" starttime="20180701 22:17:49.665" endtime="20180701 22:17:49.714"></status>
+</kw>
+<kw name="Wait Until Page Contains" library="Selenium2Library">
+<doc>Waits until ``text`` appears on current page.</doc>
+<arguments>
+<arg>${contains}</arg>
+</arguments>
+<status status="PASS" starttime="20180701 22:17:49.714" endtime="20180701 22:17:49.748"></status>
+</kw>
+<status status="PASS" starttime="20180701 22:17:49.665" endtime="20180701 22:17:49.748"></status>
+</kw>
+<kw name="Close Browser" library="Selenium2Library" type="teardown">
+<doc>Closes the current browser.</doc>
+<status status="PASS" starttime="20180701 22:17:49.748" endtime="20180701 22:17:49.884"></status>
+</kw>
+<status status="PASS" starttime="20180701 22:17:44.406" endtime="20180701 22:17:49.884" critical="yes"></status>
+</test>
+<test id="s1-t2" name="Search Product">
+<kw name="Start Up">
+<kw name="Open Browser" library="Selenium2Library">
+<doc>Opens a new browser instance to the given ``url``.</doc>
+<arguments>
+<arg>http://localhost:8080</arg>
+<arg>chrome</arg>
+</arguments>
+<msg timestamp="20180701 22:17:49.887" level="INFO">Opening browser 'chrome' to base url 'http://localhost:8080'.</msg>
+<status status="PASS" starttime="20180701 22:17:49.887" endtime="20180701 22:17:53.926"></status>
+</kw>
+<kw name="Title Should Be" library="Selenium2Library">
+<doc>Verifies that current page title equals ``title``.</doc>
+<arguments>
+<arg>Product Zone</arg>
+</arguments>
+<msg timestamp="20180701 22:17:53.998" level="INFO">Page title is 'Product Zone'.</msg>
+<status status="PASS" starttime="20180701 22:17:53.926" endtime="20180701 22:17:53.998"></status>
+</kw>
+<status status="PASS" starttime="20180701 22:17:49.887" endtime="20180701 22:17:53.999"></status>
+</kw>
+<kw name="Input Text" library="Selenium2Library">
+<doc>Types the given ``text`` into text field identified by ``locator``.</doc>
+<arguments>
+<arg>search</arg>
+<arg>Pen</arg>
+</arguments>
+<msg timestamp="20180701 22:17:53.999" level="INFO">Typing text 'Pen' into text field 'search'.</msg>
+<status status="PASS" starttime="20180701 22:17:53.999" endtime="20180701 22:17:54.131"></status>
+</kw>
+<kw name="Page Should Not Contain" library="Selenium2Library">
+<doc>Verifies the current page does not contain ``text``.</doc>
+<arguments>
+<arg>Monitor</arg>
+</arguments>
+<msg timestamp="20180701 22:17:54.157" level="INFO">Current page does not contain text 'Monitor'.</msg>
+<status status="PASS" starttime="20180701 22:17:54.132" endtime="20180701 22:17:54.157"></status>
+</kw>
+<kw name="Close Browser" library="Selenium2Library" type="teardown">
+<doc>Closes the current browser.</doc>
+<status status="PASS" starttime="20180701 22:17:54.158" endtime="20180701 22:17:54.231"></status>
+</kw>
+<status status="PASS" starttime="20180701 22:17:49.885" endtime="20180701 22:17:54.232" critical="yes"></status>
+</test>
+<test id="s1-t3" name="Select Product to See Details">
+<kw name="Start Up">
+<kw name="Open Browser" library="Selenium2Library">
+<doc>Opens a new browser instance to the given ``url``.</doc>
+<arguments>
+<arg>http://localhost:8080</arg>
+<arg>chrome</arg>
+</arguments>
+<msg timestamp="20180701 22:17:54.235" level="INFO">Opening browser 'chrome' to base url 'http://localhost:8080'.</msg>
+<status status="PASS" starttime="20180701 22:17:54.234" endtime="20180701 22:17:58.851"></status>
+</kw>
+<kw name="Title Should Be" library="Selenium2Library">
+<doc>Verifies that current page title equals ``title``.</doc>
+<arguments>
+<arg>Product Zone</arg>
+</arguments>
+<msg timestamp="20180701 22:17:58.938" level="INFO">Page title is 'Product Zone'.</msg>
+<status status="PASS" starttime="20180701 22:17:58.851" endtime="20180701 22:17:58.938"></status>
+</kw>
+<status status="PASS" starttime="20180701 22:17:54.234" endtime="20180701 22:17:58.938"></status>
+</kw>
+<kw name="Click Element" library="Selenium2Library">
+<doc>Click element identified by ``locator``.</doc>
+<arguments>
+<arg>1</arg>
+</arguments>
+<msg timestamp="20180701 22:17:58.939" level="INFO">Clicking element '1'.</msg>
+<status status="PASS" starttime="20180701 22:17:58.939" endtime="20180701 22:17:59.027"></status>
+</kw>
+<kw name="Page Should Contain" library="Selenium2Library">
+<doc>Verifies that current page contains ``text``.</doc>
+<arguments>
+<arg>Details Product :</arg>
+</arguments>
+<msg timestamp="20180701 22:17:59.046" level="INFO">Current page contains text 'Details Product :'.</msg>
+<status status="PASS" starttime="20180701 22:17:59.028" endtime="20180701 22:17:59.046"></status>
+</kw>
+<kw name="Page Should Contain" library="Selenium2Library">
+<doc>Verifies that current page contains ``text``.</doc>
+<arguments>
+<arg>1</arg>
+</arguments>
+<msg timestamp="20180701 22:17:59.062" level="INFO">Current page contains text '1'.</msg>
+<status status="PASS" starttime="20180701 22:17:59.046" endtime="20180701 22:17:59.062"></status>
+</kw>
+<kw name="Close Browser" library="Selenium2Library" type="teardown">
+<doc>Closes the current browser.</doc>
+<status status="PASS" starttime="20180701 22:17:59.063" endtime="20180701 22:17:59.134"></status>
+</kw>
+<status status="PASS" starttime="20180701 22:17:54.233" endtime="20180701 22:17:59.134" critical="yes"></status>
+</test>
+<test id="s1-t4" name="Add Product Success">
+<kw name="Start Up">
+<kw name="Open Browser" library="Selenium2Library">
+<doc>Opens a new browser instance to the given ``url``.</doc>
+<arguments>
+<arg>http://localhost:8080</arg>
+<arg>chrome</arg>
+</arguments>
+<msg timestamp="20180701 22:17:59.136" level="INFO">Opening browser 'chrome' to base url 'http://localhost:8080'.</msg>
+<status status="PASS" starttime="20180701 22:17:59.136" endtime="20180701 22:18:03.041"></status>
+</kw>
+<kw name="Title Should Be" library="Selenium2Library">
+<doc>Verifies that current page title equals ``title``.</doc>
+<arguments>
+<arg>Product Zone</arg>
+</arguments>
+<msg timestamp="20180701 22:18:03.089" level="INFO">Page title is 'Product Zone'.</msg>
+<status status="PASS" starttime="20180701 22:18:03.041" endtime="20180701 22:18:03.090"></status>
+</kw>
+<status status="PASS" starttime="20180701 22:17:59.135" endtime="20180701 22:18:03.090"></status>
+</kw>
+<kw name="Click and Check">
+<arguments>
+<arg>${id-add-menu}</arg>
+<arg>${add-page}</arg>
+</arguments>
+<kw name="Click Element" library="Selenium2Library">
+<doc>Click element identified by ``locator``.</doc>
+<arguments>
+<arg>${id}</arg>
+</arguments>
+<msg timestamp="20180701 22:18:03.091" level="INFO">Clicking element 'add'.</msg>
+<status status="PASS" starttime="20180701 22:18:03.091" endtime="20180701 22:18:03.198"></status>
+</kw>
+<kw name="Wait Until Page Contains" library="Selenium2Library">
+<doc>Waits until ``text`` appears on current page.</doc>
+<arguments>
+<arg>${contains}</arg>
+</arguments>
+<status status="PASS" starttime="20180701 22:18:03.198" endtime="20180701 22:18:03.215"></status>
+</kw>
+<status status="PASS" starttime="20180701 22:18:03.090" endtime="20180701 22:18:03.215"></status>
+</kw>
+<kw name="Add Product">
+<arguments>
+<arg>Magic Box</arg>
+<arg>999</arg>
+<arg>1</arg>
+</arguments>
+<kw name="Input Text" library="Selenium2Library">
+<doc>Types the given ``text`` into text field identified by ``locator``.</doc>
+<arguments>
+<arg>product-name</arg>
+<arg>${name}</arg>
+</arguments>
+<msg timestamp="20180701 22:18:03.216" level="INFO">Typing text 'Magic Box' into text field 'product-name'.</msg>
+<status status="PASS" starttime="20180701 22:18:03.216" endtime="20180701 22:18:03.326"></status>
+</kw>
+<kw name="Input Text" library="Selenium2Library">
+<doc>Types the given ``text`` into text field identified by ``locator``.</doc>
+<arguments>
+<arg>product-price</arg>
+<arg>${price}</arg>
+</arguments>
+<msg timestamp="20180701 22:18:03.326" level="INFO">Typing text '999' into text field 'product-price'.</msg>
+<status status="PASS" starttime="20180701 22:18:03.326" endtime="20180701 22:18:03.395"></status>
+</kw>
+<kw name="Input Text" library="Selenium2Library">
+<doc>Types the given ``text`` into text field identified by ``locator``.</doc>
+<arguments>
+<arg>product-quantity</arg>
+<arg>${quantity}</arg>
+</arguments>
+<msg timestamp="20180701 22:18:03.395" level="INFO">Typing text '1' into text field 'product-quantity'.</msg>
+<status status="PASS" starttime="20180701 22:18:03.395" endtime="20180701 22:18:03.456"></status>
+</kw>
+<kw name="Click Button" library="Selenium2Library">
+<doc>Clicks button identified by ``locator``.</doc>
+<arguments>
+<arg>btn-confirm</arg>
+</arguments>
+<msg timestamp="20180701 22:18:03.456" level="INFO">Clicking button 'btn-confirm'.</msg>
+<status status="PASS" starttime="20180701 22:18:03.456" endtime="20180701 22:18:03.612"></status>
+</kw>
+<kw name="Wait Until Page Contains" library="Selenium2Library">
+<doc>Waits until ``text`` appears on current page.</doc>
+<arguments>
+<arg>${list-page}</arg>
+</arguments>
+<status status="PASS" starttime="20180701 22:18:03.612" endtime="20180701 22:18:03.669"></status>
+</kw>
+<kw name="Page Should Contain" library="Selenium2Library">
+<doc>Verifies that current page contains ``text``.</doc>
+<arguments>
+<arg>${name}</arg>
+</arguments>
+<msg timestamp="20180701 22:18:03.689" level="INFO">Current page contains text 'Magic Box'.</msg>
+<status status="PASS" starttime="20180701 22:18:03.669" endtime="20180701 22:18:03.689"></status>
+</kw>
+<kw name="Page Should Contain" library="Selenium2Library">
+<doc>Verifies that current page contains ``text``.</doc>
+<arguments>
+<arg>${price}</arg>
+</arguments>
+<msg timestamp="20180701 22:18:03.701" level="INFO">Current page contains text '999'.</msg>
+<status status="PASS" starttime="20180701 22:18:03.689" endtime="20180701 22:18:03.701"></status>
+</kw>
+<kw name="Page Should Contain" library="Selenium2Library">
+<doc>Verifies that current page contains ``text``.</doc>
+<arguments>
+<arg>${quantity}</arg>
+</arguments>
+<msg timestamp="20180701 22:18:03.714" level="INFO">Current page contains text '1'.</msg>
+<status status="PASS" starttime="20180701 22:18:03.701" endtime="20180701 22:18:03.714"></status>
+</kw>
+<status status="PASS" starttime="20180701 22:18:03.215" endtime="20180701 22:18:03.714"></status>
+</kw>
+<kw name="Close Browser" library="Selenium2Library" type="teardown">
+<doc>Closes the current browser.</doc>
+<status status="PASS" starttime="20180701 22:18:03.715" endtime="20180701 22:18:03.788"></status>
+</kw>
+<status status="PASS" starttime="20180701 22:17:59.134" endtime="20180701 22:18:03.788" critical="yes"></status>
+</test>
+<kw name="Close All Browsers" library="Selenium2Library" type="teardown">
+<doc>Closes all open browsers and resets the browser cache.</doc>
+<status status="PASS" starttime="20180701 22:18:03.791" endtime="20180701 22:18:03.791"></status>
+</kw>
+<doc>Product-Test</doc>
+<status status="PASS" starttime="20180701 22:17:44.026" endtime="20180701 22:18:03.791"></status>
+</suite>
+<statistics>
+<total>
+<stat pass="4" fail="0">Critical Tests</stat>
+<stat pass="4" fail="0">All Tests</stat>
+</total>
+<tag>
+</tag>
+<suite>
+<stat pass="4" fail="0" id="s1" name="Product Test">Product Test</stat>
+</suite>
+</statistics>
+<errors>
+</errors>
+</robot>

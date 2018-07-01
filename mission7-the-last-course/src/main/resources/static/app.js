@@ -42,8 +42,10 @@ app.controller('AddController', ['MyService', function (MyService) {
         if (name != undefined && price != undefined) {
             if (quantity == undefined)
                 quantity = 0;
-            console.log('Data Added : ' + name + ' ' + price + ' ' + quantity);
             MyService.saveProduct(name, price, quantity);
+            console.log('Data Added : ' + name + ' ' + price + ' ' + quantity);
+            console.log('Going to list page');
+            window.location = '/';
         } else
             throw 'Product Undefined Found!!';
     };
