@@ -8,7 +8,7 @@ import javax.validation.constraints.NotBlank;
 public class Product {
 
     @Id
-    @Column(name = "  product_id")
+    @Column(name = "product_id")
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private Integer id;
 
