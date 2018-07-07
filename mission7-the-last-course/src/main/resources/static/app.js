@@ -4,13 +4,16 @@ app.config(function ($routeProvider, $locationProvider) {
     $locationProvider.html5Mode(true); // Use to clean # on route url
     $routeProvider.when('/list', {
         templateUrl: '/list-product',
-        controller: 'ListController as ctl'
+        controller: 'ListController as ctl',
+        caseInsensitiveMatch: true
     }).when('/add', {
         templateUrl: '/add-product',
-        controller: 'AddController as ctl'
+        controller: 'AddController as ctl',
+        caseInsensitiveMatch: true
     }).when('/details/:id', {
         templateUrl: '/details-product',
-        controller: 'DetailsController as ctl'
+        controller: 'DetailsController as ctl',
+        caseInsensitiveMatch: true
     }).otherwise({
         redirectTo: '/list'
     });
